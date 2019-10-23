@@ -1,0 +1,17 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": 8000
+  },
+  "credit": {
+    "initialLimit": 100,
+    "initialDays": 1
+  },
+  "mongodb": {
+      "url": "mongodb://localhost:27017/test",
+      "option": {
+        "useNewUrlParser": true,
+        "useFindAndModify": false
+      }          
+  }
+}
