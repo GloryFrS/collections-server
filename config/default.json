@@ -1,5 +1,6 @@
 {
   "server": {
+    "name": "collections",
     "host": "localhost",
     "port": 8000
   },
@@ -8,10 +9,11 @@
     "initialDays": 1
   },
   "mongodb": {
-      "url": "mongodb://localhost:27017/test",
-      "option": {
+      "url": "mongodb+srv://dbUser:pacman3r@cluster0-p7gny.mongodb.net/test?retryWrites=true&w=majority",
+      "options": {
         "useNewUrlParser": true,
-        "useFindAndModify": false
+        "useFindAndModify": false,
+        "useUnifiedTopology": true 
       }          
   }
 }

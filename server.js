@@ -2,8 +2,9 @@ import Koa from 'koa';
 import logger from 'koa-logger';
 import config from 'config';
 import mongoose from 'mongoose';
-import cors from 'koa-cors';
+import cors from '@koa/cors';
 import err from './middleware/error';
+import bodyParser from 'koa-bodyparser';
 import router from './routes';
 
 mongoose.set('debug', true);
@@ -19,10 +20,11 @@ const corsOptions = {
 app
   .use(logger())
   .use(err)
+  .use(bodyParser())
   .use(cors(corsOptions))
   .use(router.routes())
   .use(router.allowedMethods());
 
 app.listen(config.server.port, () => {
-    console.log('%s listening at port %d', config.app.name, config.server.port);
+    console.log('%s listening at port %d', config.server.name, config.server.port);
 });
